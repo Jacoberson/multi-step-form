@@ -4,6 +4,7 @@ import Step1 from "./components/navigationComponents/Step1";
 import Step2 from "./components/navigationComponents/Step2";
 import Step3 from "./components/navigationComponents/Step3";
 import Step4 from "./components/navigationComponents/Step4";
+import ThankYou from "./components/navigationComponents/ThankYou";
 import "./App.css";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       {currentStep === 2 && <Step2 setCurrentStep={setCurrentStep} />}
       {currentStep === 3 && <Step3 setCurrentStep={setCurrentStep} />}
       {currentStep === 4 && <Step4 setCurrentStep={setCurrentStep} />}
+      {currentStep === 5 && <ThankYou />}
     </>
   );
 }
