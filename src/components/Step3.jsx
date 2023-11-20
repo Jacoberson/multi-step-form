@@ -8,7 +8,7 @@ Step3.propTypes = {
 
 export default function Step3({ setCurrentStep }) {
   return (
-    <div className="select-plan">
+    <div className="select-add-ons">
       <h1>Pick add-ons</h1>
       <p>Add-ons help enhance your gaming experience.</p>
       <ul>
