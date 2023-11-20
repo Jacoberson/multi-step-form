@@ -1,6 +1,6 @@
 import { PropTypes } from "prop-types";
-import Checkbox from "./Checkbox";
-import Button from "./Button";
+import Checkbox from "./htmlComponents/Checkbox";
+import Button from "./htmlComponents/Button";
 
 Step3.propTypes = {
   setCurrentStep: PropTypes.func,
