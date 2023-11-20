@@ -14,7 +14,7 @@ export default function Checkbox({ id, groupName, value, isDefaultChecked }) {
       id={id}
       name={groupName}
       value={value}
-      checked={isDefaultChecked}
+      defaultChecked={isDefaultChecked}
     />
   );
 }
