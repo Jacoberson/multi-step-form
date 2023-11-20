@@ -1,6 +1,6 @@
 import { PropTypes } from "prop-types";
 
-Input.propTypes = {
+TextInput.propTypes = {
   type: PropTypes.string,
   name: PropTypes.string,
   id: PropTypes.string,
@@ -8,7 +8,13 @@ Input.propTypes = {
   isRequired: PropTypes.bool,
 };
 
-export default function Input({ type, name, id, placeholder, isRequired }) {
+export default function TextInput({
+  type = "text",
+  name,
+  id,
+  placeholder,
+  isRequired,
+}) {
   return (
     <input
       type={type}

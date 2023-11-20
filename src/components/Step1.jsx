@@ -1,5 +1,5 @@
 import { PropTypes } from "prop-types";
-import Input from "./Input";
+import TextInput from "./TextInput";
 import Label from "./Label";
 import Button from "./Button";
 
@@ -14,15 +14,14 @@ export default function Step1({ setCurrentStep }) {
       <p>Please provide your name, email address, and phone number.</p>
       <form action="#">
         <Label name="name" text="Name" />
-        <Input
-          type="text"
+        <TextInput
           name="name"
           id="name"
           placeholder="e.g. Stephen King"
           isRequired={true}
         />
         <Label name="email" text="Email Address" />
-        <Input
+        <TextInput
           type="email"
           name="email"
           id="email"
@@ -30,7 +29,7 @@ export default function Step1({ setCurrentStep }) {
           isRequired={true}
         />
         <Label name="phone-number" text="Phone Number" />
-        <Input
+        <TextInput
           type="tel"
           name="phone-number"
           id="phone-number"
