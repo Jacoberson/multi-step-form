@@ -1,5 +1,5 @@
 import { PropTypes } from "prop-types";
-import Button from "./htmlComponents/Button";
+import Button from "../htmlComponents/Button";
 
 StepNavigation.propTypes = {
   setCurrentStep: PropTypes.func,

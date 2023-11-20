@@ -1,7 +1,7 @@
 import { PropTypes } from "prop-types";
-import Radio from "./htmlComponents/Radio";
-import Label from "./htmlComponents/Label";
-import Button from "./htmlComponents/Button";
+import Radio from "../htmlComponents/Radio";
+import Label from "../htmlComponents/Label";
+import Button from "../htmlComponents/Button";
 
 Step2.propTypes = {
   setCurrentStep: PropTypes.func,

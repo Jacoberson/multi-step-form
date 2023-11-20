@@ -1,7 +1,7 @@
 import { PropTypes } from "prop-types";
-import TextInput from "./htmlComponents/TextInput";
-import Label from "./htmlComponents/Label";
-import Button from "./htmlComponents/Button";
+import TextInput from "../htmlComponents/TextInput";
+import Label from "../htmlComponents/Label";
+import Button from "../htmlComponents/Button";
 
 Step1.propTypes = {
   setCurrentStep: PropTypes.func,

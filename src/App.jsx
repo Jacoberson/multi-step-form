@@ -1,9 +1,9 @@
 import { useState } from "react";
-import StepNavigation from "./components/StepNavigation";
-import Step1 from "./components/Step1";
-import Step2 from "./components/Step2";
-import Step3 from "./components/Step3";
-import Step4 from "./components/Step4";
+import StepNavigation from "./components/navigationComponents/StepNavigation";
+import Step1 from "./components/navigationComponents/Step1";
+import Step2 from "./components/navigationComponents/Step2";
+import Step3 from "./components/navigationComponents/Step3";
+import Step4 from "./components/navigationComponents/Step4";
 import "./App.css";
 
 function App() {
