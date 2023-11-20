@@ -1,9 +1,10 @@
+import Step1 from "./components/Step1";
 import "./App.css";
 
 function App() {
   return (
     <>
-      <h1>Form</h1>
+      <Step1 />
     </>
   );
 }
