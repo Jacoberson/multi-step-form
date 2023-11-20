@@ -1,8 +1,13 @@
+import { PropTypes } from "prop-types";
 import Input from "./Input";
 import Label from "./Label";
 import Button from "./Button";
 
-export default function Step1() {
+Step1.propTypes = {
+  setCurrentStep: PropTypes.func,
+};
+
+export default function Step1({ setCurrentStep }) {
   return (
     <div className="personal-info">
       <h1>Personal info</h1>
@@ -32,7 +37,12 @@ export default function Step1() {
           placeholder="e.g. +1 234 567 8900"
           isRequired={true}
         />
-        <Button type="submit" text="Next Step" />
+        {/* handle form validation */}
+        <Button
+          type="submit"
+          text="Next Step"
+          onClick={() => setCurrentStep(2)}
+        />
       </form>
     </div>
   );
