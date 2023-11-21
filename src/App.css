@@ -34,6 +34,8 @@
 
   /* typography */
   --paragraph: 1rem;
+  --primary-title: 1.5rem;
+  --secondary-title: 1rem;
 
   /* font weights */
   --regular: 400;
@@ -67,17 +69,30 @@ nav button {
   font-weight: var(--bold);
 }
 
-h1 {
-  font-size: 1.5rem;
+h1,
+h3 {
+  font-size: var(--primary-title);
   font-weight: var(--bold);
   color: var(--marine-blue);
   margin: 0;
+}
+
+h3 {
+  font-size: var(--secondary-title);
 }
 
 p {
   font-size: var(--paragraph);
   color: var(--cool-gray);
   line-height: 1.3rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 label {
@@ -141,4 +156,26 @@ footer button[type="button"] {
 .personal-info form {
   display: flex;
   flex-direction: column;
+}
+
+.plan {
+  display: flex;
+  gap: 15px;
+  border: 1px solid var(--light-gray);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.plan.current-selected {
+  border: 1px solid var(--purplish-blue);
+}
+
+.plan-text p {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.billing-type {
+  display: flex;
+  justify-content: center;
 }
