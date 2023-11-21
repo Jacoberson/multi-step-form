@@ -1,11 +1,10 @@
 import { PropTypes } from "prop-types";
-import Button from "../htmlComponents/Button";
 
 Step4.propTypes = {
   setCurrentStep: PropTypes.func,
 };
 
-export default function Step4({ setCurrentStep }) {
+export default function Step4() {
   return (
     <div className="confirm">
       <h1>Finishing up</h1>
@@ -25,8 +24,6 @@ export default function Step4({ setCurrentStep }) {
           <p>+$2/mo</p>
         </li>
       </ul>
-      <Button type="button" text="Go Back" onClick={() => setCurrentStep(3)} />
-      <Button type="submit" text="Confirm" onClick={() => setCurrentStep(5)} />
     </div>
   );
 }

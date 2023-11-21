@@ -1,12 +1,11 @@
 import { PropTypes } from "prop-types";
 import Checkbox from "../htmlComponents/Checkbox";
-import Button from "../htmlComponents/Button";
 
 Step3.propTypes = {
   setCurrentStep: PropTypes.func,
 };
 
-export default function Step3({ setCurrentStep }) {
+export default function Step3() {
   return (
     <div className="select-add-ons">
       <h1>Pick add-ons</h1>
@@ -46,12 +45,6 @@ export default function Step3({ setCurrentStep }) {
           <p>+$2/mo</p>
         </li>
       </ul>
-      <Button type="button" text="Go Back" onClick={() => setCurrentStep(2)} />
-      <Button
-        type="submit"
-        text="Next Step"
-        onClick={() => setCurrentStep(4)}
-      />
     </div>
   );
 }

@@ -1,13 +1,12 @@
 import { PropTypes } from "prop-types";
 import Radio from "../htmlComponents/Radio";
 import Label from "../htmlComponents/Label";
-import Button from "../htmlComponents/Button";
 
 Step2.propTypes = {
   setCurrentStep: PropTypes.func,
 };
 
-export default function Step2({ setCurrentStep }) {
+export default function Step2() {
   return (
     <div className="select-plan">
       <h1>Select your plan</h1>
@@ -40,12 +39,6 @@ export default function Step2({ setCurrentStep }) {
         isDefaultChecked={false}
       />
       <Label name="yearly" text="Yearly" />
-      <Button type="button" text="Go Back" onClick={() => setCurrentStep(1)} />
-      <Button
-        type="submit"
-        text="Next Step"
-        onClick={() => setCurrentStep(3)}
-      />
     </div>
   );
 }
