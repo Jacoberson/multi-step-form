@@ -86,6 +86,33 @@ label {
   font-weight: var(--regular);
 }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  background-color: var(--white);
+  padding: 10px;
+}
+
+footer button {
+  padding: 12px 10px;
+  border-radius: 5px;
+  font-weight: var(--regular);
+}
+
+footer button[type="submit"] {
+  background-color: var(--marine-blue);
+  color: var(--white);
+  border: 1px solid var(--marine-blue);
+  float: right;
+}
+
+footer button[type="button"] {
+  background-color: var(--white);
+  color: var(--cool-gray);
+  border: 1px solid var(--white);
+}
+
 .text-input {
   font-weight: var(--bold);
   color: var(--cool-gray);
