@@ -34,6 +34,19 @@
 
   /* typography */
   --paragraph: 1rem;
+
+  /* font weights */
+  --regular: 400;
+  --medium: 500;
+  --bold: 700;
+}
+
+body {
+  background-image: url("./assets/images/bg-sidebar-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--magnolia);
+  font-family: "ubuntu";
 }
 
 nav {
@@ -48,4 +61,53 @@ nav button {
   border-radius: 50%;
   padding: 10px 15px;
   cursor: pointer;
+  background-color: transparent;
+  border: 1px solid var(--white);
+  border-style: solid;
+  color: var(--white);
+  font-weight: var(--bold);
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: var(--bold);
+  color: var(--marine-blue);
+}
+
+p {
+  font-size: var(--paragraph);
+  color: var(--cool-gray);
+  line-height: 1.3rem;
+}
+
+label {
+  margin: 10px 0 2px;
+  font-size: 0.75rem;
+  color: var(--marine-blue);
+  font-weight: var(--regular);
+}
+
+.text-input {
+  font-weight: var(--bold);
+  color: var(--cool-gray);
+  padding: 8px;
+}
+
+.personal-info,
+.select-plan,
+.select-add-ons,
+.confirm {
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 8px 25px;
+  margin: 25px 10px;
+}
+
+.personal-info h1 {
+  font-size: 1.5rem;
+}
+
+.personal-info form {
+  display: flex;
+  flex-direction: column;
 }

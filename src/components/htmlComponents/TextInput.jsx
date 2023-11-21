@@ -17,11 +17,13 @@ export default function TextInput({
 }) {
   return (
     <input
+      className="text-input"
       type={type}
       name={name}
       id={id}
       placeholder={placeholder}
       required={isRequired}
+      autoComplete="off"
     />
   );
 }
