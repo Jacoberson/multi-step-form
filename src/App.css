@@ -33,6 +33,7 @@
   --white: hsl(0, 0%, 100%);
 
   /* typography */
+  --small-paragraph: 0.75rem;
   --paragraph: 1rem;
   --primary-title: 1.5rem;
   --secondary-title: 1rem;
@@ -158,7 +159,8 @@ footer button[type="button"] {
   flex-direction: column;
 }
 
-.plan {
+.plan,
+.add-on {
   display: flex;
   gap: 15px;
   border: 1px solid var(--light-gray);
@@ -166,16 +168,40 @@ footer button[type="button"] {
   padding: 15px;
 }
 
-.plan.current-selected {
+.add-on {
+  gap: 20px;
+  align-items: center;
+}
+
+.plan.current-selected,
+.add-on.add-on-selected {
   border: 1px solid var(--purplish-blue);
 }
 
-.plan-text p {
+.plan-text p,
+.add-on-text p {
   margin-top: 8px;
   margin-bottom: 0;
+}
+
+.add-on-text p,
+.add-on-price {
+  font-size: var(--small-paragraph);
+}
+
+.add-on-price {
+  color: var(--purplish-blue);
+  margin-left: auto;
+  font-weight: var(--bold);
 }
 
 .billing-type {
   display: flex;
   justify-content: center;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--purplish-blue);
 }

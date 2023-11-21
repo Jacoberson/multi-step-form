@@ -9,12 +9,17 @@ Checkbox.propTypes = {
 
 export default function Checkbox({ id, groupName, value, isDefaultChecked }) {
   return (
-    <input
-      type="checkbox"
-      id={id}
-      name={groupName}
-      value={value}
-      defaultChecked={isDefaultChecked}
-    />
+    <>
+      <label htmlFor={id} className="form-control">
+        <input
+          type="checkbox"
+          className="checkbox"
+          id={id}
+          name={groupName}
+          value={value}
+          defaultChecked={isDefaultChecked}
+        />
+      </label>
+    </>
   );
 }
