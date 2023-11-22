@@ -19,7 +19,7 @@ function App() {
       {currentStep === 1 && <Step1 />}
       {currentStep === 2 && <Step2 />}
       {currentStep === 3 && <Step3 />}
-      {currentStep === 4 && <Step4 />}
+      {currentStep === 4 && <Step4 setCurrentStep={setCurrentStep} />}
       {currentStep === 5 && <ThankYou />}
       <Footer currentStep={currentStep} setCurrentStep={setCurrentStep} />
     </>

@@ -1,13 +1,8 @@
-import { PropTypes } from "prop-types";
 import Radio from "../htmlComponents/Radio";
 import Label from "../htmlComponents/Label";
 import ArcadeIcon from "../../assets/images/icon-arcade.svg";
 import AdvancedIcon from "../../assets/images/icon-advanced.svg";
 import ProIcon from "../../assets/images/icon-pro.svg";
-
-Step2.propTypes = {
-  setCurrentStep: PropTypes.func,
-};
 
 export default function Step2() {
   return (
