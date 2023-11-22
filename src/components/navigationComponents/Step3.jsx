@@ -6,12 +6,11 @@ export default function Step3() {
       <h1>Pick add-ons</h1>
       <p>Add-ons help enhance your gaming experience.</p>
       <ul>
-        <li className="add-on add-on-selected">
+        <li className="add-on">
           <Checkbox
             id="online-service"
             groupName="add-ons"
             value="online-service"
-            isDefaultChecked={true}
           />
           <div className="add-on-text">
             <h3>Online service</h3>
@@ -19,14 +18,13 @@ export default function Step3() {
           </div>
           <p className="add-on-price">+$1/mo</p>
         </li>
-        <li className="add-on add-on-selected">
+        <li className="add-on">
           <Checkbox
             id="larger-storage"
             groupName="add-ons"
             value="larger-storage"
-            isDefaultChecked={true}
           />
-          <div className="add-on-text add-on-selected">
+          <div className="add-on-text">
             <h3>Larger storage</h3>
             <p>Extra 1TB of cloud save</p>
           </div>
@@ -37,7 +35,6 @@ export default function Step3() {
             id="customize-profile"
             groupName="add-ons"
             value="customize-profile"
-            isDefaultChecked={false}
           />
           <div className="add-on-text">
             <h3>Customizable profile</h3>

@@ -1,13 +1,26 @@
+import { useState, useEffect } from "react";
 import { PropTypes } from "prop-types";
 
 Checkbox.propTypes = {
   id: PropTypes.string,
   groupName: PropTypes.string,
   value: PropTypes.string,
-  isDefaultChecked: PropTypes.bool,
 };
 
-export default function Checkbox({ id, groupName, value, isDefaultChecked }) {
+export default function Checkbox({ id, groupName, value }) {
+  const [isChecked, setIsChecked] = useState(false);
+
+  useEffect(() => {
+    const clickedCheckbox = document.getElementById(id);
+    const parentContainer = clickedCheckbox.parentElement.parentElement;
+
+    if (parentContainer.classList.contains("add-on-selected")) {
+      parentContainer.classList.remove("add-on-selected");
+    } else {
+      parentContainer.classList.add("add-on-selected");
+    }
+  }, [id, isChecked]);
+
   return (
     <>
       <label htmlFor={id} className="form-control">
@@ -17,7 +30,8 @@ export default function Checkbox({ id, groupName, value, isDefaultChecked }) {
           id={id}
           name={groupName}
           value={value}
-          defaultChecked={isDefaultChecked}
+          checked={isChecked}
+          onChange={() => setIsChecked(!isChecked)}
         />
       </label>
     </>
