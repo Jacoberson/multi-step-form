@@ -12,7 +12,10 @@ function App() {
   const [currentStep, setCurrentStep] = useState(1);
   return (
     <>
-      <StepNavigation setCurrentStep={setCurrentStep} />
+      <StepNavigation
+        currentStep={currentStep}
+        setCurrentStep={setCurrentStep}
+      />
       {currentStep === 1 && <Step1 />}
       {currentStep === 2 && <Step2 />}
       {currentStep === 3 && <Step3 />}

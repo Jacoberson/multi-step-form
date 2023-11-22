@@ -70,6 +70,12 @@ nav button {
   font-weight: var(--bold);
 }
 
+nav button.selected-step {
+  background-color: var(--pastel-blue);
+  color: var(--marine-blue);
+  border: 1px solid var(--pastel-blue);
+}
+
 h1,
 h3 {
   font-size: var(--primary-title);

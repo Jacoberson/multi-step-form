@@ -4,11 +4,12 @@ Button.propTypes = {
   type: PropTypes.string,
   text: PropTypes.string,
   onClick: PropTypes.func,
+  id: PropTypes.string,
 };
 
-export default function Button({ type, text, onClick }) {
+export default function Button({ type, text, onClick, id }) {
   return (
-    <button type={type} onClick={onClick}>
+    <button id={id} type={type} onClick={onClick}>
       {text}
     </button>
   );
