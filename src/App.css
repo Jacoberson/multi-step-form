@@ -141,6 +141,10 @@ footer #confirm-btn {
   background-color: var(--purplish-blue);
 }
 
+.select-plan li {
+  cursor: pointer;
+}
+
 .text-input {
   font-weight: var(--bold);
   color: var(--cool-gray);

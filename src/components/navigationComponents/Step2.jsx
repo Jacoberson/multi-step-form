@@ -1,61 +1,51 @@
 import { PropTypes } from "prop-types";
-import ArcadeIcon from "../../assets/images/icon-arcade.svg";
-import AdvancedIcon from "../../assets/images/icon-advanced.svg";
-import ProIcon from "../../assets/images/icon-pro.svg";
+import data from "../../data.json";
 
 Step2.propTypes = {
+  selectedPlan: PropTypes.string,
+  setSelectedPlan: PropTypes.func,
   isYearly: PropTypes.bool,
   setIsYearly: PropTypes.func,
 };
 
-export default function Step2({ isYearly, setIsYearly }) {
+export default function Step2({
+  selectedPlan,
+  setSelectedPlan,
+  isYearly,
+  setIsYearly,
+}) {
   return (
     <div className="select-plan">
       <h1>Select your plan</h1>
       <p>You have the option of monthly or yearly billing.</p>
       <ul>
-        <li className="plan current-selected">
-          <img src={ArcadeIcon} alt="" />
-          <div className="plan-text">
-            <h3>Arcade</h3>
-            {isYearly ? (
-              <>
-                <p>$90/yr</p>
-                <p className="free-months">2 months free</p>
-              </>
-            ) : (
-              <p>$9/mo</p>
-            )}
-          </div>
-        </li>
-        <li className="plan">
-          <img src={AdvancedIcon} alt="" />
-          <div className="plan-text">
-            <h3>Advanced</h3>
-            {isYearly ? (
-              <>
-                <p>$120/yr</p>
-                <p className="free-months">2 months free</p>
-              </>
-            ) : (
-              <p>$12/mo</p>
-            )}
-          </div>
-        </li>
-        <li className="plan">
-          <img src={ProIcon} alt="" />
-          <div className="plan-text">
-            <h3>Pro</h3>
-            {isYearly ? (
-              <>
-                <p>$150/yr</p>
-                <p className="free-months">2 months free</p>
-              </>
-            ) : (
-              <p>$15/mo</p>
-            )}
-          </div>
-        </li>
+        {data.plans.map(plan => {
+          return (
+            <li
+              key={plan.name}
+              className={
+                selectedPlan === plan.name
+                  ? `plan ${plan.name} current-selected`
+                  : `plan ${plan.name}`
+              }
+              onClick={() => setSelectedPlan(plan.name)}>
+              <img src={plan.icon} alt="" />
+              <div className="plan-text">
+                <h3>
+                  {plan.name.charAt(0).toUpperCase() + plan.name.slice(1)}
+                </h3>
+                {isYearly ? (
+                  <>
+                    <p>{plan.yearlyPrice}</p>
+                    <p className="free-months">2 months free</p>
+                  </>
+                ) : (
+                  <p>{plan.monthlyPrice}</p>
+                )}
+              </div>
+            </li>
+          );
+        })}
       </ul>
       <div className="toggle-container">
         <span className="monthly-text">Monthly</span>

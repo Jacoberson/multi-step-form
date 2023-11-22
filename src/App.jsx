@@ -11,6 +11,8 @@ import "./App.css";
 function App() {
   const [currentStep, setCurrentStep] = useState(1);
   const [isYearly, setIsYearly] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState("arcade");
+
   return (
     <>
       <StepNavigation
@@ -19,11 +21,20 @@ function App() {
       />
       {currentStep === 1 && <Step1 />}
       {currentStep === 2 && (
-        <Step2 isYearly={isYearly} setIsYearly={setIsYearly} />
+        <Step2
+          selectedPlan={selectedPlan}
+          setSelectedPlan={setSelectedPlan}
+          isYearly={isYearly}
+          setIsYearly={setIsYearly}
+        />
       )}
       {currentStep === 3 && <Step3 isYearly={isYearly} />}
       {currentStep === 4 && (
-        <Step4 setCurrentStep={setCurrentStep} isYearly={isYearly} />
+        <Step4
+          selectedPlan={selectedPlan}
+          setCurrentStep={setCurrentStep}
+          isYearly={isYearly}
+        />
       )}
       {currentStep === 5 && <ThankYou />}
       <Footer currentStep={currentStep} setCurrentStep={setCurrentStep} />
