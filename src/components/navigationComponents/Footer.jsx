@@ -16,11 +16,17 @@ export default function Footer({ currentStep, setCurrentStep }) {
           onClick={() => setCurrentStep(currentStep - 1)}
         />
       )}
-      {currentStep !== 5 && (
+      {currentStep !== 4 ? (
         <Button
           type="submit"
           text="Next Step"
           onClick={() => setCurrentStep(currentStep + 1)}
+        />
+      ) : (
+        <Button
+          type="submit"
+          text="Confirm"
+          onClick={() => console.log("thank you page")}
         />
       )}
     </footer>
