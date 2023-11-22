@@ -215,3 +215,53 @@ footer #confirm-btn {
   height: 20px;
   accent-color: var(--purplish-blue);
 }
+
+.confirm .selected-choices {
+  margin: 30px 0;
+}
+
+.confirm .selected-plan {
+  border-bottom: 2px solid var(--light-gray);
+}
+
+.confirm .selected-plan-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.confirm .change-plan {
+  color: var(--cool-gray);
+  text-decoration: underline;
+  font-weight: var(--medium);
+}
+
+.confirm .selected-plan,
+.confirm .selected-add-on,
+.confirm .final-price-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.confirm .selected-plan {
+  padding-bottom: 15px;
+}
+
+.selected-plan .plan-price,
+.selected-add-on .add-on-price {
+  color: var(--marine-blue);
+  font-size: 0.875rem;
+}
+
+.selected-plan .plan-price {
+  font-weight: var(--bold);
+}
+
+.confirm .final-price {
+  color: var(--purplish-blue);
+  font-weight: var(--bold);
+}
+
+.selected-add-on p {
+  margin: 0;
+}

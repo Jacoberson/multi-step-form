@@ -1,9 +1,4 @@
-import { PropTypes } from "prop-types";
 import Checkbox from "../htmlComponents/Checkbox";
-
-Step3.propTypes = {
-  setCurrentStep: PropTypes.func,
-};
 
 export default function Step3() {
   return (
