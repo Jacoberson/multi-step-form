@@ -118,7 +118,7 @@ footer {
 }
 
 footer button {
-  padding: 12px 10px;
+  padding: 12px 20px;
   border-radius: 5px;
   font-weight: var(--regular);
 }
@@ -134,6 +134,10 @@ footer button[type="button"] {
   background-color: var(--white);
   color: var(--cool-gray);
   border: 1px solid var(--white);
+}
+
+footer #confirm-btn {
+  background-color: var(--purplish-blue);
 }
 
 .text-input {

@@ -24,6 +24,7 @@ export default function Footer({ currentStep, setCurrentStep }) {
         />
       ) : (
         <Button
+          id="confirm-btn"
           type="submit"
           text="Confirm"
           onClick={() => console.log("thank you page")}
