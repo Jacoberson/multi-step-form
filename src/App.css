@@ -169,6 +169,11 @@ footer #confirm-btn {
   flex-direction: column;
 }
 
+.select-plan .free-months {
+  color: var(--marine-blue);
+  font-size: var(--small-paragraph);
+}
+
 .plan,
 .add-on {
   display: flex;
@@ -176,6 +181,10 @@ footer #confirm-btn {
   border: 1px solid var(--light-gray);
   border-radius: 10px;
   padding: 15px;
+}
+
+.plan {
+  align-items: flex-start;
 }
 
 .add-on {

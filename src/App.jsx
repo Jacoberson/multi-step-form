@@ -10,6 +10,7 @@ import "./App.css";
 
 function App() {
   const [currentStep, setCurrentStep] = useState(1);
+  const [isMonthly, setIsMonthly] = useState(true);
   return (
     <>
       <StepNavigation
@@ -17,9 +18,13 @@ function App() {
         setCurrentStep={setCurrentStep}
       />
       {currentStep === 1 && <Step1 />}
-      {currentStep === 2 && <Step2 />}
-      {currentStep === 3 && <Step3 />}
-      {currentStep === 4 && <Step4 setCurrentStep={setCurrentStep} />}
+      {currentStep === 2 && (
+        <Step2 isMonthly={isMonthly} setIsMonthly={setIsMonthly} />
+      )}
+      {currentStep === 3 && <Step3 isMonthly={isMonthly} />}
+      {currentStep === 4 && (
+        <Step4 setCurrentStep={setCurrentStep} isMonthly={isMonthly} />
+      )}
       {currentStep === 5 && <ThankYou />}
       <Footer currentStep={currentStep} setCurrentStep={setCurrentStep} />
     </>
