@@ -1,16 +1,14 @@
 import { PropTypes } from "prop-types";
-// import Radio from "../htmlComponents/Radio";
-// import Label from "../htmlComponents/Label";
 import ArcadeIcon from "../../assets/images/icon-arcade.svg";
 import AdvancedIcon from "../../assets/images/icon-advanced.svg";
 import ProIcon from "../../assets/images/icon-pro.svg";
 
 Step2.propTypes = {
-  isMonthly: PropTypes.bool,
-  setIsMonthly: PropTypes.func,
+  isYearly: PropTypes.bool,
+  setIsYearly: PropTypes.func,
 };
 
-export default function Step2({ isMonthly, setIsMonthly }) {
+export default function Step2({ isYearly, setIsYearly }) {
   return (
     <div className="select-plan">
       <h1>Select your plan</h1>
@@ -20,13 +18,13 @@ export default function Step2({ isMonthly, setIsMonthly }) {
           <img src={ArcadeIcon} alt="" />
           <div className="plan-text">
             <h3>Arcade</h3>
-            {isMonthly ? (
-              <p>$9/mo</p>
-            ) : (
+            {isYearly ? (
               <>
                 <p>$90/yr</p>
                 <p className="free-months">2 months free</p>
               </>
+            ) : (
+              <p>$9/mo</p>
             )}
           </div>
         </li>
@@ -34,13 +32,13 @@ export default function Step2({ isMonthly, setIsMonthly }) {
           <img src={AdvancedIcon} alt="" />
           <div className="plan-text">
             <h3>Advanced</h3>
-            {isMonthly ? (
-              <p>$12/mo</p>
-            ) : (
+            {isYearly ? (
               <>
                 <p>$120/yr</p>
                 <p className="free-months">2 months free</p>
               </>
+            ) : (
+              <p>$12/mo</p>
             )}
           </div>
         </li>
@@ -48,41 +46,29 @@ export default function Step2({ isMonthly, setIsMonthly }) {
           <img src={ProIcon} alt="" />
           <div className="plan-text">
             <h3>Pro</h3>
-            {isMonthly ? (
-              <p>$15/mo</p>
-            ) : (
+            {isYearly ? (
               <>
                 <p>$150/yr</p>
                 <p className="free-months">2 months free</p>
               </>
+            ) : (
+              <p>$15/mo</p>
             )}
           </div>
         </li>
       </ul>
-      <div className="billing-type">
-        <label htmlFor="is-monthly">
+      <div className="toggle-container">
+        <span className="monthly-text">Monthly</span>
+        <label className="switch">
           <input
             type="checkbox"
             value="is-monthly"
-            defaultChecked={isMonthly}
-            onChange={() => setIsMonthly(!isMonthly)}
+            defaultChecked={isYearly}
+            onChange={() => setIsYearly(!isYearly)}
           />
-          <span>Is Monthly?</span>
+          <span className="slider round"></span>
         </label>
-        {/* <Label name="monthly" text="Monthly" />
-        <Radio
-          id="monthly"
-          name="billing"
-          value="monthly"
-          isDefaultChecked={true}
-        />
-        <Radio
-          id="yearly"
-          name="billing"
-          value="yearly"
-          isDefaultChecked={false}
-        />
-        <Label name="yearly" text="Yearly" /> */}
+        <span className="yearly-text">Yearly</span>
       </div>
     </div>
   );

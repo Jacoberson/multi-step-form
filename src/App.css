@@ -34,6 +34,7 @@
 
   /* typography */
   --small-paragraph: 0.75rem;
+  --medium-paragraph: 0.875rem;
   --paragraph: 1rem;
   --primary-title: 1.5rem;
   --secondary-title: 1rem;
@@ -104,7 +105,7 @@ ul {
 
 label {
   margin: 10px 0 2px;
-  font-size: 0.75rem;
+  font-size: var(--small-paragraph);
   color: var(--marine-blue);
   font-weight: var(--regular);
 }
@@ -259,7 +260,7 @@ footer #confirm-btn {
 .selected-plan .plan-price,
 .selected-add-on .add-on-price {
   color: var(--marine-blue);
-  font-size: 0.875rem;
+  font-size: var(--medium-paragraph);
 }
 
 .selected-plan .plan-price {
@@ -273,4 +274,77 @@ footer #confirm-btn {
 
 .selected-add-on p {
   margin: 0;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.toggle-container span {
+  font-size: var(--medium-paragraph);
+  font-weight: var(--bold);
+}
+
+.toggle-container .yearly-text {
+  color: var(--cool-gray);
+}
+
+/* Toggle switch */
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background-color: var(--marine-blue);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 2px;
+  bottom: 4px;
+  background-color: var(--white);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(22px);
+  -ms-transform: translateX(22px);
+  transform: translateX(22px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }

@@ -2,10 +2,10 @@ import { PropTypes } from "prop-types";
 import Checkbox from "../htmlComponents/Checkbox";
 
 Step3.propTypes = {
-  isMonthly: PropTypes.bool,
+  isYearly: PropTypes.bool,
 };
 
-export default function Step3({ isMonthly }) {
+export default function Step3({ isYearly }) {
   return (
     <div className="select-add-ons">
       <h1>Pick add-ons</h1>
@@ -21,7 +21,7 @@ export default function Step3({ isMonthly }) {
             <h3>Online service</h3>
             <p>Access to multiplayer games</p>
           </div>
-          <p className="add-on-price">{isMonthly ? "+$1/mo" : "+$10/yr"}</p>
+          <p className="add-on-price">{isYearly ? "+$10/yr" : "+$1/mo"}</p>
         </li>
         <li className="add-on">
           <Checkbox
@@ -33,7 +33,7 @@ export default function Step3({ isMonthly }) {
             <h3>Larger storage</h3>
             <p>Extra 1TB of cloud save</p>
           </div>
-          <p className="add-on-price">{isMonthly ? "+$2/mo" : "+$20/yr"}</p>
+          <p className="add-on-price">{isYearly ? "+$20/yr" : "+$2/mo"}</p>
         </li>
         <li className="add-on">
           <Checkbox
@@ -45,7 +45,7 @@ export default function Step3({ isMonthly }) {
             <h3>Customizable profile</h3>
             <p>Custom theme on your profile</p>
           </div>
-          <p className="add-on-price">{isMonthly ? "+$2/mo" : "+$20/yr"}</p>
+          <p className="add-on-price">{isYearly ? "+$20/yr" : "+$2/mo"}</p>
         </li>
       </ul>
     </div>
