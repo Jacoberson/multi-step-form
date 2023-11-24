@@ -36,11 +36,11 @@ export default function Step2({
                 </h3>
                 {isYearly ? (
                   <>
-                    <p>{plan.yearlyPrice}</p>
+                    <p>${plan.yearlyPrice}/yr</p>
                     <p className="free-months">2 months free</p>
                   </>
                 ) : (
-                  <p>{plan.monthlyPrice}</p>
+                  <p>${plan.monthlyPrice}/mo</p>
                 )}
               </div>
             </li>

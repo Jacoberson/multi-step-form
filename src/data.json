@@ -2,20 +2,20 @@
   "plans": [
     {
       "name": "arcade",
-      "monthlyPrice": "$9/mo",
-      "yearlyPrice": "$90/yr",
+      "monthlyPrice": 9,
+      "yearlyPrice": 90,
       "icon": "../images/icon-arcade.svg"
     },
     {
       "name": "advanced",
-      "monthlyPrice": "$12/mo",
-      "yearlyPrice": "$120/yr",
+      "monthlyPrice": 12,
+      "yearlyPrice": 120,
       "icon": "../images/icon-advanced.svg"
     },
     {
       "name": "pro",
-      "monthlyPrice": "$15/mo",
-      "yearlyPrice": "$150/yr",
+      "monthlyPrice": 15,
+      "yearlyPrice": 150,
       "icon": "../images/icon-pro.svg"
     }
   ],
@@ -24,22 +24,22 @@
       "name": "Online service",
       "id": "online-service",
       "description": "Access to multiplayer games",
-      "monthlyPrice": "$1/mo",
-      "yearlyPrice": "$10/yr"
+      "monthlyPrice": 1,
+      "yearlyPrice": 10
     },
     {
       "name": "Larger storage",
       "id": "larger-storage",
       "description": "Extra 1TB of cloud save",
-      "monthlyPrice": "$2/mo",
-      "yearlyPrice": "$20/yr"
+      "monthlyPrice": 2,
+      "yearlyPrice": 20
     },
     {
       "name": "Customizable profile",
       "id": "customizable-profile",
       "description": "Custom theme on your profile",
-      "monthlyPrice": "$2/mo",
-      "yearlyPrice": "$20/yr"
+      "monthlyPrice": 2,
+      "yearlyPrice": 20
     }
   ]
 }

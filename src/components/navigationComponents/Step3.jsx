@@ -52,7 +52,9 @@ export default function Step3({ selectedAddOns, setSelectedAddOns, isYearly }) {
                 <p>{addOn.description}</p>
               </div>
               <p className="add-on-price">
-                {isYearly ? `+${addOn.yearlyPrice}` : `+${addOn.monthlyPrice}`}
+                {isYearly
+                  ? `+$${addOn.yearlyPrice}/yr`
+                  : `+$${addOn.monthlyPrice}/mo`}
               </p>
             </li>
           );

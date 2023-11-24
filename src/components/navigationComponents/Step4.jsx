@@ -14,6 +14,24 @@ export default function Step4({
   setCurrentStep,
   isYearly,
 }) {
+  const getTotalPrice = () => {
+    const basePrice = isYearly
+      ? data.plans.find(plan => plan.name === selectedPlan).yearlyPrice
+      : data.plans.find(plan => plan.name === selectedPlan).monthlyPrice;
+
+    let totalOfAddOns = selectedAddOns
+      .map(selectedAddOn => {
+        return isYearly
+          ? data["add-ons"].find(addOn => addOn.id === selectedAddOn)
+              .yearlyPrice
+          : data["add-ons"].find(addOn => addOn.id === selectedAddOn)
+              .monthlyPrice;
+      })
+      .reduce((acc, curr) => acc + curr, 0);
+
+    return basePrice + totalOfAddOns;
+  };
+
   return (
     <div className="confirm">
       <h1>Finishing up</h1>
@@ -31,9 +49,14 @@ export default function Step4({
           </div>
           <p className="plan-price">
             {isYearly
-              ? data.plans.find(plan => plan.name === selectedPlan).yearlyPrice
-              : data.plans.find(plan => plan.name === selectedPlan)
-                  .monthlyPrice}
+              ? `$${
+                  data.plans.find(plan => plan.name === selectedPlan)
+                    .yearlyPrice
+                }/yr`
+              : `$${
+                  data.plans.find(plan => plan.name === selectedPlan)
+                    .monthlyPrice
+                }/mo`}
           </p>
         </div>
         <ul className="selected-add-ons">
@@ -49,12 +72,16 @@ export default function Step4({
                   </p>
                   <p className="add-on-price">
                     {isYearly
-                      ? data["add-ons"].find(
-                          addOn => addOn.id === selectedAddOn
-                        ).yearlyPrice
-                      : data["add-ons"].find(
-                          addOn => addOn.id === selectedAddOn
-                        ).monthlyPrice}
+                      ? `+$${
+                          data["add-ons"].find(
+                            addOn => addOn.id === selectedAddOn
+                          ).yearlyPrice
+                        }/yr`
+                      : `+$${
+                          data["add-ons"].find(
+                            addOn => addOn.id === selectedAddOn
+                          ).monthlyPrice
+                        }/mo`}
                   </p>
                 </li>
               </>
@@ -63,8 +90,10 @@ export default function Step4({
         </ul>
       </div>
       <div className="final-price-container">
-        <p>Total (per month)</p>
-        <p className="final-price">{isYearly ? "+$120/yr" : "+$12/mo"}</p>
+        <p>Total {isYearly ? "(per year)" : "(per month)"}</p>
+        <p className="final-price">{`+$${getTotalPrice()}${
+          isYearly ? "/yr" : "/mo"
+        }`}</p>
       </div>
     </div>
   );
