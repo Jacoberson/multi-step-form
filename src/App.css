@@ -192,6 +192,10 @@ footer #confirm-btn {
   align-items: flex-start;
 }
 
+.add-on label {
+  margin: 0;
+}
+
 .add-on {
   gap: 20px;
   align-items: center;

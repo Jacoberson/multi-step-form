@@ -3,11 +3,17 @@ import data from "../../data.json";
 
 Step4.propTypes = {
   selectedPlan: PropTypes.string,
+  selectedAddOns: PropTypes.array,
   setCurrentStep: PropTypes.func,
   isYearly: PropTypes.bool,
 };
 
-export default function Step4({ selectedPlan, setCurrentStep, isYearly }) {
+export default function Step4({
+  selectedPlan,
+  selectedAddOns,
+  setCurrentStep,
+  isYearly,
+}) {
   return (
     <div className="confirm">
       <h1>Finishing up</h1>
@@ -31,14 +37,29 @@ export default function Step4({ selectedPlan, setCurrentStep, isYearly }) {
           </p>
         </div>
         <ul className="selected-add-ons">
-          <li className="selected-add-on">
-            <p>Online service</p>
-            <p className="add-on-price">{isYearly ? "+$10/yr" : "+$1/mo"}</p>
-          </li>
-          <li className="selected-add-on">
-            <p>Larger storage</p>
-            <p className="add-on-price">{isYearly ? "+$20/yr" : "+$2/mo"}</p>
-          </li>
+          {selectedAddOns.map(selectedAddOn => {
+            return (
+              <>
+                <li key={selectedAddOn} className="selected-add-on">
+                  <p>
+                    {
+                      data["add-ons"].find(addOn => addOn.id === selectedAddOn)
+                        .name
+                    }
+                  </p>
+                  <p className="add-on-price">
+                    {isYearly
+                      ? data["add-ons"].find(
+                          addOn => addOn.id === selectedAddOn
+                        ).yearlyPrice
+                      : data["add-ons"].find(
+                          addOn => addOn.id === selectedAddOn
+                        ).monthlyPrice}
+                  </p>
+                </li>
+              </>
+            );
+          })}
         </ul>
       </div>
       <div className="final-price-container">

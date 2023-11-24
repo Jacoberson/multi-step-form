@@ -12,6 +12,7 @@ function App() {
   const [currentStep, setCurrentStep] = useState(1);
   const [isYearly, setIsYearly] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState("arcade");
+  const [selectedAddOns, setSelectedAddOns] = useState([]);
 
   return (
     <>
@@ -28,10 +29,17 @@ function App() {
           setIsYearly={setIsYearly}
         />
       )}
-      {currentStep === 3 && <Step3 isYearly={isYearly} />}
+      {currentStep === 3 && (
+        <Step3
+          selectedAddOns={selectedAddOns}
+          setSelectedAddOns={setSelectedAddOns}
+          isYearly={isYearly}
+        />
+      )}
       {currentStep === 4 && (
         <Step4
           selectedPlan={selectedPlan}
+          selectedAddOns={selectedAddOns}
           setCurrentStep={setCurrentStep}
           isYearly={isYearly}
         />
