@@ -95,6 +95,13 @@ p {
   line-height: 1.3rem;
 }
 
+/* a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+} */
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -122,6 +129,7 @@ footer button {
   padding: 12px 20px;
   border-radius: 5px;
   font-weight: var(--regular);
+  cursor: pointer;
 }
 
 footer button[type="submit"] {
@@ -203,8 +211,14 @@ footer #confirm-btn {
 }
 
 .plan.current-selected,
-.add-on.add-on-selected {
+.add-on.add-on-selected,
+.plan:hover,
+.add-on:hover {
   border: 1px solid var(--purplish-blue);
+}
+
+.add-on:hover {
+  cursor: pointer;
 }
 
 .plan-text p,
@@ -253,6 +267,12 @@ footer #confirm-btn {
   color: var(--cool-gray);
   text-decoration: underline;
   font-weight: var(--medium);
+  cursor: pointer;
+}
+
+.confirm .change-plan:hover {
+  color: var(--purplish-blue);
+  font-weight: var(--bold);
 }
 
 .confirm .selected-plan,

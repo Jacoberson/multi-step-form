@@ -11,15 +11,14 @@ Step3.propTypes = {
 export default function Step3({ selectedAddOns, setSelectedAddOns, isYearly }) {
   useEffect(() => {
     selectedAddOns.forEach(addOn => {
-      const parentElement =
-        document.getElementById(addOn).parentElement.parentElement;
+      const parentElement = document.getElementById(addOn).parentElement;
 
       parentElement.classList.add("add-on-selected");
     });
   }, [selectedAddOns]);
 
   const updateSelectedAddOns = e => {
-    const parentElement = e.parentElement.parentElement;
+    const parentElement = e.parentElement;
     if (e.checked) {
       setSelectedAddOns([...selectedAddOns, e.id]);
       parentElement.classList.add("add-on-selected");
@@ -36,27 +35,29 @@ export default function Step3({ selectedAddOns, setSelectedAddOns, isYearly }) {
       <ul>
         {data["add-ons"].map(addOn => {
           return (
-            <li key={addOn.name} className="add-on">
+            <>
               <label htmlFor={addOn.id} className="form-control">
-                <input
-                  type="checkbox"
-                  className="checkbox"
-                  id={addOn.id}
-                  name="add-on"
-                  checked={selectedAddOns.includes(addOn.id)}
-                  onChange={e => updateSelectedAddOns(e.target)}
-                />
+                <li key={addOn.name} className={`add-on ${addOn.id}`}>
+                  <input
+                    type="checkbox"
+                    className="checkbox"
+                    id={addOn.id}
+                    name="add-on"
+                    checked={selectedAddOns.includes(addOn.id)}
+                    onChange={e => updateSelectedAddOns(e.target)}
+                  />
+                  <div className="add-on-text">
+                    <h3>{addOn.name}</h3>
+                    <p>{addOn.description}</p>
+                  </div>
+                  <p className="add-on-price">
+                    {isYearly
+                      ? `+$${addOn.yearlyPrice}/yr`
+                      : `+$${addOn.monthlyPrice}/mo`}
+                  </p>
+                </li>
               </label>
-              <div className="add-on-text">
-                <h3>{addOn.name}</h3>
-                <p>{addOn.description}</p>
-              </div>
-              <p className="add-on-price">
-                {isYearly
-                  ? `+$${addOn.yearlyPrice}/yr`
-                  : `+$${addOn.monthlyPrice}/mo`}
-              </p>
-            </li>
+            </>
           );
         })}
       </ul>
