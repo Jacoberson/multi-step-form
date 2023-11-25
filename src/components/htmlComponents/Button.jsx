@@ -9,7 +9,7 @@ Button.propTypes = {
 
 export default function Button({ type, text, onClick, id }) {
   return (
-    <button id={id} type={type} onClick={onClick}>
+    <button id={id} form="personal-info-form" type={type} onClick={onClick}>
       {text}
     </button>
   );

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, Fragment } from "react";
 import { PropTypes } from "prop-types";
 import data from "../../data.json";
 
@@ -35,9 +35,9 @@ export default function Step3({ selectedAddOns, setSelectedAddOns, isYearly }) {
       <ul>
         {data["add-ons"].map(addOn => {
           return (
-            <>
+            <Fragment key={addOn.id}>
               <label htmlFor={addOn.id} className="form-control">
-                <li key={addOn.name} className={`add-on ${addOn.id}`}>
+                <li className={`add-on ${addOn.id}`}>
                   <input
                     type="checkbox"
                     className="checkbox"
@@ -57,7 +57,7 @@ export default function Step3({ selectedAddOns, setSelectedAddOns, isYearly }) {
                   </p>
                 </li>
               </label>
-            </>
+            </Fragment>
           );
         })}
       </ul>

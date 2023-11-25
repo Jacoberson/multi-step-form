@@ -9,6 +9,7 @@ import Footer from "./components/navigationComponents/Footer";
 import "./App.css";
 
 function App() {
+  const [canNavigate, setCanNavigate] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
   const [isYearly, setIsYearly] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState("arcade");
@@ -17,10 +18,11 @@ function App() {
   return (
     <>
       <StepNavigation
+        canNavigate={canNavigate}
         currentStep={currentStep}
         setCurrentStep={setCurrentStep}
       />
-      {currentStep === 1 && <Step1 />}
+      {currentStep === 1 && <Step1 setCanNavigate={setCanNavigate} />}
       {currentStep === 2 && (
         <Step2
           selectedPlan={selectedPlan}
@@ -45,7 +47,11 @@ function App() {
         />
       )}
       {currentStep === 5 && <ThankYou />}
-      <Footer currentStep={currentStep} setCurrentStep={setCurrentStep} />
+      <Footer
+        canNavigate={canNavigate}
+        currentStep={currentStep}
+        setCurrentStep={setCurrentStep}
+      />
     </>
   );
 }

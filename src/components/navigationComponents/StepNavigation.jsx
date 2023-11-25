@@ -3,11 +3,16 @@ import { PropTypes } from "prop-types";
 import Button from "../htmlComponents/Button";
 
 StepNavigation.propTypes = {
+  canNavigate: PropTypes.bool,
   currentStep: PropTypes.number,
   setCurrentStep: PropTypes.func,
 };
 
-export default function StepNavigation({ currentStep, setCurrentStep }) {
+export default function StepNavigation({
+  canNavigate,
+  currentStep,
+  setCurrentStep,
+}) {
   useEffect(() => {
     const buttons = document.querySelectorAll("nav button");
     buttons.forEach(button => (button.className = ""));
@@ -20,7 +25,7 @@ export default function StepNavigation({ currentStep, setCurrentStep }) {
   }, [currentStep]);
 
   const handleButtonClick = step => {
-    setCurrentStep(step);
+    canNavigate && setCurrentStep(step);
   };
 
   return (

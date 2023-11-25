@@ -95,13 +95,6 @@ p {
   line-height: 1.3rem;
 }
 
-/* a:link,
-a:visited,
-a:hover,
-a:active {
-  text-decoration: none;
-} */
-
 ul {
   list-style-type: none;
   padding: 0;
@@ -160,6 +153,24 @@ footer #confirm-btn {
   border-radius: 5px;
   padding: 8px;
   margin-bottom: 10px;
+}
+
+.text-input:invalid {
+  border: 1px solid var(--strawberry-red);
+}
+
+.text-input:placeholder-shown {
+  border: 1px solid var(--light-gray);
+}
+
+.error {
+  position: relative;
+  color: var(--strawberry-red);
+  font-size: var(--medium-paragraph);
+  font-weight: var(--bold);
+  margin: 0;
+  bottom: 65px;
+  text-align: right;
 }
 
 .personal-info,

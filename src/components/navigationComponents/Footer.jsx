@@ -2,11 +2,12 @@ import { PropTypes } from "prop-types";
 import Button from "../htmlComponents/Button";
 
 Footer.propTypes = {
+  canNavigate: PropTypes.bool,
   currentStep: PropTypes.number,
   setCurrentStep: PropTypes.func,
 };
 
-export default function Footer({ currentStep, setCurrentStep }) {
+export default function Footer({ canNavigate, currentStep, setCurrentStep }) {
   return (
     <footer>
       {currentStep !== 1 && (
@@ -16,13 +17,14 @@ export default function Footer({ currentStep, setCurrentStep }) {
           onClick={() => setCurrentStep(currentStep - 1)}
         />
       )}
-      {currentStep !== 4 ? (
+      {currentStep < 4 && (
         <Button
           type="submit"
           text="Next Step"
-          onClick={() => setCurrentStep(currentStep + 1)}
+          onClick={() => canNavigate && setCurrentStep(currentStep + 1)}
         />
-      ) : (
+      )}
+      {currentStep === 4 && (
         <Button
           id="confirm-btn"
           type="submit"
