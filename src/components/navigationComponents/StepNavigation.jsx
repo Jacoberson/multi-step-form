@@ -13,8 +13,9 @@ export default function StepNavigation({ currentStep, setCurrentStep }) {
     buttons.forEach(button => (button.className = ""));
 
     const selectedButton = document.getElementById(
-      `step-${currentStep}-button`
+      `step-${currentStep < 4 ? currentStep : 4}-button`
     );
+
     selectedButton.classList.add("selected-step");
   }, [currentStep]);
 
