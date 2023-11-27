@@ -10,7 +10,7 @@ Footer.propTypes = {
 export default function Footer({ canNavigate, currentStep, setCurrentStep }) {
   return (
     <footer>
-      {currentStep !== 1 && (
+      {currentStep !== 1 && currentStep !== 5 && (
         <Button
           type="button"
           text="Go Back"
