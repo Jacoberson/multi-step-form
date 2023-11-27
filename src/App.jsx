@@ -14,6 +14,14 @@ function App() {
   const [isYearly, setIsYearly] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState("arcade");
   const [selectedAddOns, setSelectedAddOns] = useState([]);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [errors, setErrors] = useState({
+    name: "Name is required",
+    email: "Email is required",
+    phone: "Phone number is required",
+  });
 
   return (
     <>
@@ -22,7 +30,20 @@ function App() {
         currentStep={currentStep}
         setCurrentStep={setCurrentStep}
       />
-      {currentStep === 1 && <Step1 setCanNavigate={setCanNavigate} />}
+      {currentStep === 1 && (
+        <Step1
+          canNavigate={canNavigate}
+          setCanNavigate={setCanNavigate}
+          name={name}
+          setName={setName}
+          email={email}
+          setEmail={setEmail}
+          phone={phone}
+          setPhone={setPhone}
+          errors={errors}
+          setErrors={setErrors}
+        />
+      )}
       {currentStep === 2 && (
         <Step2
           selectedPlan={selectedPlan}

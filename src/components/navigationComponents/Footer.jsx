@@ -14,7 +14,7 @@ export default function Footer({ canNavigate, currentStep, setCurrentStep }) {
         <Button
           type="button"
           text="Go Back"
-          onClick={() => setCurrentStep(currentStep - 1)}
+          onClick={() => canNavigate && setCurrentStep(currentStep - 1)}
         />
       )}
       {currentStep < 4 && (
@@ -29,7 +29,7 @@ export default function Footer({ canNavigate, currentStep, setCurrentStep }) {
           id="confirm-btn"
           type="submit"
           text="Confirm"
-          onClick={() => setCurrentStep(5)}
+          onClick={() => canNavigate && setCurrentStep(5)}
         />
       )}
     </footer>

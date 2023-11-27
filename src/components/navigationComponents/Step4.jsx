@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { PropTypes } from "prop-types";
 import data from "../../data.json";
 
@@ -62,8 +63,8 @@ export default function Step4({
         <ul className="selected-add-ons">
           {selectedAddOns.map(selectedAddOn => {
             return (
-              <>
-                <li key={selectedAddOn} className="selected-add-on">
+              <Fragment key={selectedAddOn}>
+                <li className="selected-add-on">
                   <p>
                     {
                       data["add-ons"].find(addOn => addOn.id === selectedAddOn)
@@ -84,7 +85,7 @@ export default function Step4({
                         }/mo`}
                   </p>
                 </li>
-              </>
+              </Fragment>
             );
           })}
         </ul>

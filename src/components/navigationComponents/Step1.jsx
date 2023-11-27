@@ -1,27 +1,38 @@
-import { useState } from "react";
 import { PropTypes } from "prop-types";
 import validate from "../../functions/validate";
 
 Step1.propTypes = {
   setCanNavigate: PropTypes.func,
+  name: PropTypes.string,
+  setName: PropTypes.func,
+  email: PropTypes.string,
+  setEmail: PropTypes.func,
+  phone: PropTypes.string,
+  setPhone: PropTypes.func,
+  errors: PropTypes.object,
+  setErrors: PropTypes.func,
 };
 
-export default function Step1({ setCanNavigate }) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [errors, setErrors] = useState({ name: "", email: "", phone: "" });
+export default function Step1({
+  setCanNavigate,
+  name,
+  setName,
+  email,
+  setEmail,
+  phone,
+  setPhone,
+  errors,
+  setErrors,
+}) {
+  const checkForErrors = () => {
+    return Object.values(errors).every(value => value === undefined);
+  };
 
   const handleInputChange = (e, changeFunc, field) => {
     changeFunc(e.target.value);
     errors[field] = validate(field, e.target.value);
     setErrors({ ...errors });
-
-    if (Object.keys(errors).length === 0) {
-      setCanNavigate(false);
-    } else {
-      setCanNavigate(true);
-    }
+    setCanNavigate(checkForErrors());
   };
 
   const handleSubmit = e => {
