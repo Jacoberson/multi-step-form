@@ -77,6 +77,10 @@ nav button.selected-step {
   border: 1px solid var(--pastel-blue);
 }
 
+nav .button-text {
+  display: none;
+}
+
 h1,
 h3 {
   font-size: var(--primary-title);
@@ -113,7 +117,7 @@ label {
 footer {
   position: absolute;
   bottom: 0;
-  width: 90%;
+  width: calc(100% - 20px);
   background-color: var(--white);
   padding: 10px;
 }
@@ -404,4 +408,79 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    background-size: cover;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    background-image: none;
+    overflow: hidden;
+  }
+
+  #root {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 8px;
+    margin-top: 0;
+    margin-left: auto;
+    padding-top: 40px;
+    padding-right: 60px;
+    padding-left: 32px;
+    background-image: url("./assets/images/bg-sidebar-desktop.svg");
+    background-size: cover;
+    z-index: 1;
+  }
+
+  nav .step-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav .button-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav .button-text p {
+    margin: 0;
+    color: var(--pastel-blue);
+    text-transform: uppercase;
+    font-size: var(--small-paragraph);
+  }
+
+  nav .button-text p.step-description {
+    color: var(--white);
+    font-weight: var(--bold);
+    font-size: var(--medium-paragraph);
+  }
+
+  .personal-info,
+  .select-plan,
+  .select-add-ons,
+  .confirm,
+  .thank-you {
+    margin: 0 auto 0 0;
+    background-color: var(--white);
+    border-radius: 10px;
+    padding-bottom: 100px;
+    padding-left: 50px;
+    padding-right: 100px;
+    box-shadow: 0 3px 7px var(--light-gray);
+  }
 }

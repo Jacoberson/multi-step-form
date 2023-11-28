@@ -30,30 +30,54 @@ export default function StepNavigation({
 
   return (
     <nav>
-      <Button
-        id="step-1-button"
-        type="button"
-        text="1"
-        onClick={() => handleButtonClick(1)}
-      />
-      <Button
-        id="step-2-button"
-        type="button"
-        text="2"
-        onClick={() => handleButtonClick(2)}
-      />
-      <Button
-        id="step-3-button"
-        type="button"
-        text="3"
-        onClick={() => handleButtonClick(3)}
-      />
-      <Button
-        id="step-4-button"
-        type="button"
-        text="4"
-        onClick={() => handleButtonClick(4)}
-      />
+      <div className="step-container">
+        <Button
+          id="step-1-button"
+          type="button"
+          text="1"
+          onClick={() => handleButtonClick(1)}
+        />
+        <div className="button-text">
+          <p className="step">Step 1</p>
+          <p className="step-description">Your info</p>
+        </div>
+      </div>
+      <div className="step-container">
+        <Button
+          id="step-2-button"
+          type="button"
+          text="2"
+          onClick={() => handleButtonClick(2)}
+        />
+        <div className="button-text">
+          <p className="step">Step 2</p>
+          <p className="step-description">Select plan</p>
+        </div>
+      </div>
+      <div className="step-container">
+        <Button
+          id="step-3-button"
+          type="button"
+          text="3"
+          onClick={() => handleButtonClick(3)}
+        />
+        <div className="button-text">
+          <p className="step">Step 3</p>
+          <p className="step-description">Add-ons</p>
+        </div>
+      </div>
+      <div className="step-container">
+        <Button
+          id="step-4-button"
+          type="button"
+          text="4"
+          onClick={() => handleButtonClick(4)}
+        />
+        <div className="button-text">
+          <p className="step">Step 4</p>
+          <p className="step-description">Summary</p>
+        </div>
+      </div>
     </nav>
   );
 }
