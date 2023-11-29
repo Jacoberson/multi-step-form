@@ -45,6 +45,10 @@
   --bold: 700;
 }
 
+html {
+  box-sizing: border-box;
+}
+
 body {
   background-image: url("./assets/images/bg-sidebar-mobile.svg");
   background-repeat: no-repeat;
@@ -470,6 +474,10 @@ input:checked + .slider:before {
     font-size: var(--medium-paragraph);
   }
 
+  ul {
+    margin: 0;
+  }
+
   .personal-info,
   .select-plan,
   .select-add-ons,
@@ -482,5 +490,65 @@ input:checked + .slider:before {
     padding-left: 50px;
     padding-right: 100px;
     box-shadow: 0 3px 7px var(--light-gray);
+    height: 390px;
+    width: 440px;
+  }
+
+  .personal-info > p,
+  .select-plan > p,
+  .select-add-ons > p,
+  .confirm > p,
+  .thank-you > p {
+    margin-bottom: 32px;
+  }
+
+  footer {
+    grid-column-start: 2;
+  }
+
+  .select-plan ul {
+    flex-direction: row;
+    margin-bottom: 50px;
+  }
+
+  .plan {
+    flex-direction: column;
+    gap: 45px;
+    min-width: 120px;
+  }
+
+  .add-on {
+    justify-content: space-around;
+  }
+
+  .add-on-price {
+    margin-left: 100px;
+    text-align: right;
+  }
+
+  .select-add-ons label {
+    margin: 0;
+  }
+
+  .select-add-ons ul {
+    gap: 20px;
+  }
+
+  .confirm .selected-plan {
+    padding-bottom: 30px;
+  }
+
+  .confirm ul {
+    margin-top: 30px;
+  }
+
+  .thank-you {
+    justify-content: center;
+    padding-top: 25px;
+    gap: 15px;
+  }
+
+  .thank-you p {
+    margin: 0;
   }
 }
