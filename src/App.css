@@ -150,7 +150,8 @@ footer #confirm-btn {
   background-color: var(--purplish-blue);
 }
 
-.select-plan li {
+.select-plan li,
+.add-on:hover {
   cursor: pointer;
 }
 
@@ -234,10 +235,6 @@ footer #confirm-btn {
 .plan:hover,
 .add-on:hover {
   border: 1px solid var(--purplish-blue);
-}
-
-.add-on:hover {
-  cursor: pointer;
 }
 
 .plan-text p,
@@ -526,7 +523,8 @@ input:checked + .slider:before {
     text-align: right;
   }
 
-  .select-add-ons label {
+  .select-add-ons label,
+  .thank-you p {
     margin: 0;
   }
 
@@ -546,9 +544,5 @@ input:checked + .slider:before {
     justify-content: center;
     padding-top: 25px;
     gap: 15px;
-  }
-
-  .thank-you p {
-    margin: 0;
   }
 }
