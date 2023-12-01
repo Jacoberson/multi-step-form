@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - [Solution URL](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ/hub?share=true)
-- [Live Site URL]([https://your-live-site-url.com](https://multi-step-form-jacoberson.vercel.app/))
+- [Live Site URL](https://multi-step-form-jacoberson.vercel.app/)
 
 ## My process
 
