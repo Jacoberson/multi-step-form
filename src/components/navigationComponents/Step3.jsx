@@ -1,5 +1,6 @@
 import { useEffect, Fragment } from "react";
 import { PropTypes } from "prop-types";
+import { getAddOnPrice } from "../../functions/money";
 import data from "../../data.json";
 
 Step3.propTypes = {
@@ -9,6 +10,8 @@ Step3.propTypes = {
 };
 
 export default function Step3({ selectedAddOns, setSelectedAddOns, isYearly }) {
+  const billingType = isYearly ? "yearly" : "monthly";
+
   useEffect(() => {
     selectedAddOns.forEach(addOn => {
       const parentElement = document.getElementById(addOn).parentElement;
@@ -51,9 +54,7 @@ export default function Step3({ selectedAddOns, setSelectedAddOns, isYearly }) {
                     <p>{addOn.description}</p>
                   </div>
                   <p className="add-on-price">
-                    {isYearly
-                      ? `+$${addOn.yearlyPrice}/yr`
-                      : `+$${addOn.monthlyPrice}/mo`}
+                    {getAddOnPrice(addOn.id, billingType, true)}
                   </p>
                 </li>
               </label>

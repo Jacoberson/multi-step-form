@@ -1,4 +1,5 @@
 import { PropTypes } from "prop-types";
+import { capitalize } from "../../functions/format";
 import data from "../../data.json";
 
 Step2.propTypes = {
@@ -31,9 +32,7 @@ export default function Step2({
               onClick={() => setSelectedPlan(plan.name)}>
               <img src={plan.icon} alt="" />
               <div className="plan-text">
-                <h3>
-                  {plan.name.charAt(0).toUpperCase() + plan.name.slice(1)}
-                </h3>
+                <h3>{capitalize(plan.name)}</h3>
                 {isYearly ? (
                   <>
                     <p>${plan.yearlyPrice}/yr</p>
