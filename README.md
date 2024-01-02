@@ -11,6 +11,7 @@ This is a solution to the [Multi-step form challenge on Frontend Mentor](https:/
   - [Built with](#built-with)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
+ - [Author](#author)
 
 ## Overview
 
@@ -50,3 +51,6 @@ Users should be able to:
 ### Useful resources
 
 - [W3Schools Toggle Switch How To](https://www.w3schools.com/howto/howto_css_switch.asp) - This helped me create a toggle switch for the component to switch between monthly and yearly billing
+
+## Author
+- Frontend Mentor - [@jacoberson](https://www.frontendmentor.io/profile/Jacoberson)
